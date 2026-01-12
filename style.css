@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Instructions Screen */
+#instructions {
+    background-color: #000;
+}
+
+#instructions h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+#instructions h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.instructions-text {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.instructions-text ul, .instructions-text ol {
+    text-align: left;
+    margin: 1rem 0;
+}
+
+.instructions-text li {
+    margin: 0.5rem 0;
+}
+
+/* Pre-Test Screen */
+#pre-test {
+    background-color: #000;
+}
+
+#pre-test h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #00ff00;
+}
+
+.test-info {
+    max-width: 600px;
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.test-info p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.test-info strong {
+    color: #00ff00;
+}
+
+#test-instructions {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 5px;
+    border-left: 4px solid #00ff00;
+}
+
+#test-instructions p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.advice-highlight {
+    background-color: #444;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    border: 2px solid #ff6600;
+}
+
+.advice-highlight p {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+/* Stimulus Screen - Clean interface */
+#stimulus {
+    background-color: #000;
+    transition: background-color 0.1s ease;
+    padding: 0;
+}
+
+#stimulus.visual-stimulus {
+    background-color: #ff0000;
+}
+
+#stimulus.auditory-stimulus {
+    background-color: #000;
+}
+
+/* Disqualified Screen */
+#disqualified {
+    background-color: #000;
+}
+
+#disqualified h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ff6600;
+}
+
+.disqualified-content {
+    max-width: 500px;
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 2px solid #ff6600;
+}
+
+.disqualified-content p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Results Screen */
+#results {
+    background-color: #000;
+}
+
+#results h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#result-content p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+#reaction-time {
+    font-size: 3rem !important;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+/* Statistics Screen */
+#statistics {
+    background-color: #000;
+}
+
+#statistics h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#stats-content {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.stat-group {
+    background-color: #222;
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-width: 200px;
+}
+
+.stat-group h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00ff00;
+}
+
+.stat-group p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Progress Bar */
+#progress-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    background-color: #00ff00;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#progress-text {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+.comparison {
+    background-color: #2a2a2a !important;
+    border: 2px solid #00ff00;
+}
+
+/* Buttons */
+.game-btn {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.game-btn:hover {
+    background-color: #00cc00;
+    transform: translateY(-2px);
+}
+
+.game-btn.secondary {
+    background-color: #333;
+    color: #fff;
+}
+
+.game-btn.secondary:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #instructions h1 {
+        font-size: 2rem;
+    }
+    
+    #stimulus h1 {
+        font-size: 2.5rem;
+    }
+    
+    .instructions-text {
+        font-size: 0.9rem;
+    }
+    
+    #stats-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

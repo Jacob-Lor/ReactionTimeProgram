@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Game - Sound vs Light</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="instructions" class="screen">
+            <h1>Reaction Time Lab</h1>
+            <h2>Sound vs Light Stimulus</h2>
+            <div class="instructions-text">
+                <p>This lab tests your reaction time to different stimuli:</p>
+                <ul>
+                    <li><strong>Visual stimulus:</strong> Screen changes from black to red</li>
+                    <li><strong>Auditory stimulus:</strong> Bell sound plays on black screen</li>
+                </ul>
+                <p><strong>Lab Protocol:</strong></p>
+                <ol>
+                    <li>2 practice rounds (1 visual, 1 auditory)</li>
+                    <li>6 test rounds (3 visual, 3 auditory - randomized)</li>
+                    <li>Press SPACEBAR as quickly as possible when you detect the stimulus</li>
+                </ol>
+                <p><strong>Total: 8 rounds</strong></p>
+            </div>
+            <button id="begin-btn" class="game-btn">Start Lab Session</button>
+        </div>
+
+        <div id="pre-test" class="screen hidden">
+            <h2 id="pre-test-title">Practice Round 1 - Visual Test</h2>
+            <div id="pre-test-content">
+                <div class="test-info">
+                    <p><strong>Test Type:</strong> <span id="test-type">Visual</span></p>
+                    <p><strong>Grace Period:</strong> <span id="grace-period">10-15 seconds</span></p>
+                    <p><strong>Instructions:</strong></p>
+                    <div id="test-instructions">
+                        <p>Watch the screen carefully. It will change from black to red.</p>
+                        <p>Press SPACEBAR immediately when you see the color change.</p>
+                    </div>
+                </div>
+            </div>
+            <button id="start-test-btn" class="game-btn">Start Test</button>
+        </div>
+
+        <div id="stimulus" class="screen hidden">
+            <!-- Empty screen for stimulus display -->
+        </div>
+
+        <div id="disqualified" class="screen hidden">
+            <h2>Test Disqualified</h2>
+            <div class="disqualified-content">
+                <p>⚠️ You pressed the spacebar too early!</p>
+                <p>Please wait for the stimulus before responding.</p>
+                <p>This round will be repeated.</p>
+            </div>
+            <button id="retry-btn" class="game-btn">Retry Round</button>
+        </div>
+
+        <div id="results" class="screen hidden">
+            <h2>Round Results</h2>
+            <div id="result-content">
+                <p id="round-info"></p>
+                <p id="stimulus-type"></p>
+                <p id="reaction-time"></p>
+                <p id="performance-rating"></p>
+            </div>
+            <button id="continue-btn" class="game-btn">Continue</button>
+            <button id="view-stats-btn" class="game-btn secondary hidden">View Final Results</button>
+        </div>
+
+        <div id="statistics" class="screen hidden">
+            <h2>Lab Results Summary</h2>
+            <div id="stats-content">
+                <div class="stat-group">
+                    <h3>Visual Stimulus Results</h3>
+                    <p>Practice round: <span id="visual-practice">-</span></p>
+                    <p>Test rounds: <span id="visual-tests">-</span></p>
+                    <p>Average test time: <span id="visual-avg">-</span></p>
+                    <p>Best test time: <span id="visual-best">-</span></p>
+                </div>
+                <div class="stat-group">
+                    <h3>Auditory Stimulus Results</h3>
+                    <p>Practice round: <span id="auditory-practice">-</span></p>
+                    <p>Test rounds: <span id="auditory-tests">-</span></p>
+                    <p>Average test time: <span id="auditory-avg">-</span></p>
+                    <p>Best test time: <span id="auditory-best">-</span></p>
+                </div>
+                <div class="stat-group comparison">
+                    <h3>Comparison</h3>
+                    <p id="faster-stimulus">-</p>
+                    <p id="difference">-</p>
+                </div>
+            </div>
+            <button id="restart-lab-btn" class="game-btn">Start New Lab Session</button>
+            <button id="export-data-btn" class="game-btn secondary">Export Data</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
